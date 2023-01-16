@@ -7,10 +7,10 @@ mkdir -p $SYNC_PATH
 cd $SYNC_PATH
 
 # Init Repo
-repo init -u $MANIFEST -b $MANIFEST_BRANCH
+repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1
 
 # Sync the Sources
-repo sync
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # Clone Trees
 git clone --depth=1 $DT_LINK $DT_PATH || { echo "ERROR: Failed to Clone the Device Trees!" && exit 1; }
