@@ -24,7 +24,7 @@ env:
 
 task:
   name: "LMI Evolution-X Build"
-  timeout_in: 2h
+  timeout_in: 4h
   container:
     image: apon77/aosp:cirrus
     cpu: 8
