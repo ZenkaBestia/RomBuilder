@@ -1,17 +1,17 @@
 env:
-  MANIFEST: https://github.com/crdroidandroid/android.git
-  MANIFEST_BRANCH: 13.0
-  DEVICE: spes
+  MANIFEST: https://github.com/Evolution-X/manifest.git
+  MANIFEST_BRANCH: tiramisu
+  DEVICE: lmi
   OEM: xiaomi
-  DT_LINK: https://github.com/sakshiagrwal/android_device_xiaomi_spes.git -b jb13.0
+  DT_LINK: https://github.com/ZenkaBestia/device_xiaomi_lmi.git -b 13-evox
   DT_PATH: device/$OEM/$DEVICE
-  VT_LINK: https://github.com/sakshiagrwal/android_vendor_xiaomi_spes.git -b jb13.0
+  VT_LINK: https://github.com/ProjectElixir-Devices/vendor_xiaomi_lmi.git -b Tiramisu
   VT_PATH: vendor/$OEM/$DEVICE
-  KT_LINK: https://github.com/sakshiagrwal/android_kernel_xiaomi_spes.git -b jb13.0
+  KT_LINK: https://github.com/ProjectElixir-Devices/kernel_xiaomi_lmi.git -b zen_plus-13
   KT_PATH: kernel/$OEM/$DEVICE
-  LUNCH_COMBO: lineage_spes-user
-  TARGET: bacon
-  OUTPUT: crDroidAndroid*.zip
+  LUNCH_COMBO: evolution_lmi-user
+  TARGET: evolution
+  OUTPUT: evolution*.zip
 
   # Not Recommended to Change
   SYNC_PATH: $HOME/work # Do NOT use "~". Use $HOME instead.
@@ -23,7 +23,7 @@ env:
   CIRRUS_SHELL: bash
 
 task:
-  name: "crDroid Build"
+  name: "LMI Evolution-X Build"
   timeout_in: 2h
   container:
     image: apon77/aosp:cirrus
